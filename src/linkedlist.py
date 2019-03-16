@@ -47,7 +47,7 @@ class SinglyLinkedList():
 
     def insert(self, value):
         """
-        Insert an element in the list. 
+        Insert an element in the list.
 
         This method exists for convenient naming.
 
@@ -56,6 +56,15 @@ class SinglyLinkedList():
         self.prepend(value)
 
     def insert_at(self, value, position):
+        """
+        Insert an element at a specified position.
+
+        This method exists for convenient naming.
+
+        :param value: data to add
+        :param position: index to insert at
+        """
+
         if position >= self.size:
             raise IndexError
 
@@ -78,6 +87,11 @@ class SinglyLinkedList():
         self.size += 1
 
     def find(self, value):
+        """
+        Find an element in the list
+
+        :param value: data to find
+        """
         curr_node = self.head
 
         while curr_node is not None:
@@ -89,6 +103,11 @@ class SinglyLinkedList():
             raise ValueError('{} not found'.format(value))
 
     def find_at(self, position):
+        """
+        Get the element at a given position
+
+        :param position: index to retrieve
+        """
         if position >= self.size:
             raise IndexError
 
@@ -101,6 +120,11 @@ class SinglyLinkedList():
         return curr_node
 
     def delete(self, value):
+        """
+        Remove an element in the list.
+
+        :param value: data to remove
+        """
         curr_node = self.head
         prev_node = None
 
@@ -127,6 +151,11 @@ class SinglyLinkedList():
         self.size -= 1
 
     def delete_at(self, position):
+        """
+        Remove the element at a given index.
+
+        :param position: index to remove
+        """
         if position >= self.size:
             raise IndexError
 
@@ -161,6 +190,12 @@ class DoublyLinkedList():
         self.size = 0
 
     def prepend(self, value):
+        """
+        Add an element at the head of the list. Point the new element's 'next'
+        at the previous head, shifting all remaining elements to the right.
+
+        :param value: data to add
+        """
         new_node = DoublyLinkedListNode()
         new_node.data = value
 
@@ -177,6 +212,12 @@ class DoublyLinkedList():
         self.size += 1
 
     def append(self, value):
+        """
+        Add an element at the tail of the list. Update the previous final
+        element's 'next' to point to the new element.
+
+        :param value: data to add
+        """
         new_node = DoublyLinkedListNode()
         new_node.data = value
         curr_node = self.head
@@ -194,7 +235,25 @@ class DoublyLinkedList():
 
         self.size += 1
 
+    def insert(self, value):
+        """
+        Insert an element in the list.
+
+        This method exists for convenient naming.
+
+        :param value: data to add
+        """
+        self.prepend(value)
+
     def insert_at(self, value, position):
+        """
+        Insert an element at a specified position.
+
+        This method exists for convenient naming.
+
+        :param value: data to add
+        :param position: index to insert at
+        """
         if position >= self.size:
             raise IndexError
 
@@ -218,6 +277,11 @@ class DoublyLinkedList():
         self.size += 1
 
     def find(self, value):
+        """
+        Find an element in the list
+
+        :param value: data to find
+        """
         curr_node = self.head
 
         while curr_node is not None:
@@ -229,6 +293,11 @@ class DoublyLinkedList():
             raise ValueError('{} not found'.format(value))
 
     def find_at(self, position):
+        """
+        Get the element at a given position
+
+        :param position: index to retrieve
+        """
         if position >= self.size:
             raise IndexError
 
@@ -241,6 +310,11 @@ class DoublyLinkedList():
         return curr_node
 
     def delete(self, value):
+        """
+        Remove an element in the list.
+
+        :param value: data to remove
+        """
         curr_node = self.head
         prev_node = None
 
@@ -270,6 +344,11 @@ class DoublyLinkedList():
         self.size -= 1
 
     def delete_at(self, position):
+        """
+        Remove the element at a given index.
+
+        :param position: index to remove
+        """
         if position >= self.size:
             raise IndexError
 
